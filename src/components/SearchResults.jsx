@@ -2,7 +2,7 @@ import {List, ListRowRenderer} from "react-virtualized"
 
 import { ProductItem } from "./ProductItem";
 
-interface SearchResultsProps {
+/* interface SearchResultsProps {
   totalPrice: number;
   results: Array<{
     id: number;
@@ -11,10 +11,10 @@ interface SearchResultsProps {
     title: string;
   }>
   onAddToWishList: (id: number) => void;
-}
+} */
 
-export function SearchResults({results, totalPrice, onAddToWishList}: SearchResultsProps){
-  const rowRenderer: ListRowRenderer = ({index, key, style}) => {
+export function SearchResults({results, totalPrice, onAddToWishList}){
+  const rowRenderer = ({index, key, style}) => {
     return (
       <div key={key} style={style}>
         <ProductItem 
@@ -28,8 +28,8 @@ export function SearchResults({results, totalPrice, onAddToWishList}: SearchResu
   return(
     <div>
       <h2>{totalPrice}</h2>
-
-      <List 
+      
+      <List
         height={300}
         rowHeight={30}
         width={900}
